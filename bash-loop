@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-echo "Converting gbk to fasta protein"
+echo "Converting gbk to fasta protein for Cheeseboy"
 #convert gbk to fasta protein
 VAR4=$(echo *.gb | xargs ls)
 
@@ -15,7 +15,7 @@ find . -size 0 -exec rm {} \;
 
 
 
-echo "I'm too nice and I am also running MMSeqs2 for you Stephen..."
+echo "I'm too nice and I am also running MMSeqs2 for you Cheeseboy..."
 cat *.faa >> database.fa
 
 
