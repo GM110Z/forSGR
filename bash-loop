@@ -9,4 +9,17 @@ for f in ${VAR4}
       python gbktofaa.py  ${f}
    done
 
+
+#remove empty sequence files 
+find . -size 0 -exec rm {} \;
+
+
+
+echo "I'm too nice and I am also running MMSeqs2 for you Stephen..."
+cat *.faa >> database.fa
+
+
+echo "Clustering protein families"
+#cluster proteins by similarity
+mmseqs easy-linclust database.fa clusterRes tmp --cov-mode 0 -c 0.5 --min-seq-id 0.6 --threads 8
 echo "Done"
